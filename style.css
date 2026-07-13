@@ -158,7 +158,9 @@ nav ul li a:hover { color: #3498db; }
     object-fit: cover;
     border: 8px solid #fff;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+    /* অটোমেটিক ভাসমান (Floating) অ্যানিমেশন চালু করা হলো */
+    animation: floatImage 4s ease-in-out infinite;
+} 
 
 .social-links a {
     font-size: 1.5rem;
@@ -424,4 +426,15 @@ footer { background: #111; color: #7f8c8d; text-align: center; padding: 25px 0; 
     .timeline-item { width: 100%; text-align: left !important; padding-left: 40px; }
     .timeline-item::after { left: 8px !important; }
     .grid-two-col { grid-template-columns: 1fr; }
+}
+@keyframes floatImage {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px); /* ছবিটি স্বয়ংক্রিয়ভাবে ১৫ পিক্সেল উপরে উঠবে */
+    }
+    100% {
+        transform: translateY(0px); /* আবার আগের জায়গায় নেমে আসবে */
+    }
 }
